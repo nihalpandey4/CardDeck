@@ -15,7 +15,7 @@ func newDeck() deck{
 			cards = append(cards, (cardTypes[j]+" of "+cardSuits[i]));
 		}
 	}
-	
+
 	return cards;
 }
 
@@ -23,4 +23,8 @@ func (d deck) printDeck(){
 	for i:=0;i<len(d);i++ {
 		fmt.Println(d[i]);
 	}	
+}
+
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize],d[handSize:];
 }
